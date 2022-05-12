@@ -9,8 +9,10 @@ $users = [
     (object)[
         'id' => 1,
         'name' => 'ahmed',
+        
          "gender" => (object)[
             'gender' => 'm'
+            
         ],
         'hobbies' => [
             'football', 'swimming', 'running'
@@ -18,7 +20,8 @@ $users = [
         'activities' => [
             "school" => 'drawing',
             'home' => 'painting'
-        ],  
+        ],
+        'mail'=>'mohamed@gamil.com'  
     ],
     (object)[
         'id' => 2,
@@ -47,9 +50,33 @@ $users = [
             "school" => 'painting',
             'home' => 'drawing'
         ], 
+    
     ],  
-
+    (object)[
+        'id' => '4',
+        'name' => 'shimaa',
+        "gender" => (object)[
+            'gender' => 'f'
+        ],
+        'hobbies' => [
+            'running',
+        ],
+        'activities' => [
+            "school" => 'painting',
+            'home' => 'drawing'
+        ], 
+    
+    ],  
 ];
+$max_n_property=1;
+foreach($users as $n=>$property){
+    $properties=count((array)$users[$n]);
+    if($properties>$max_n_property)
+    {
+        $max_n_property=$properties;
+        $bigest_user=$users[$n];
+    }
+}
 
 ?>
 <!doctype html>
@@ -70,11 +97,10 @@ $users = [
   <table class="table">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Hobbies</th>
-        <th>Activities</th>
+          <?php
+          foreach($bigest_user as $p=>$v){?>
+        <th><?php echo $p  ?></th>
+        <?php }?>
       </tr>
     </thead>
     <tbody>
@@ -106,6 +132,10 @@ else{echo$val;} ?></td>
         <?php  } ?>
     </tbody>
   </table>
+  <?php 
+  
+
+   ?> 
 </div>
 
       
