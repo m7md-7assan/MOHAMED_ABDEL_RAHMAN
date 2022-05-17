@@ -73,7 +73,7 @@ foreach($users as $n=>$property){
     $properties=count((array)$users[$n]);
     if($properties>$max_n_property)
     {
-        $max_n_property=$properties;
+      //  $max_n_property=$properties;
         $bigest_user=$users[$n];
     }
 }
